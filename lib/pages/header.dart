@@ -1,8 +1,10 @@
 import 'dart:math';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Header extends StatelessWidget {
   const Header({Key? key}) : super(key: key);
@@ -158,12 +160,28 @@ class Header extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
             ),
-            Text(
-              "HERE TO HUSTLE !",
-              style: TextStyle(
-                color: Colors.amber,
-                fontSize: 30,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.flash_on,
+                  color: Colors.yellow,
+                  size: 50,
+                ),
+                Text(
+                  "HERE TO HUSTLE !",
+                  style: TextStyle(
+                    color: Colors.amber,
+                    fontSize: 50,
+                  ),
+                ),
+                Icon(
+                  Icons.flash_on,
+                  color: Colors.yellow,
+                  size: 50,
+                ),
+              ],
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
@@ -198,7 +216,8 @@ class AboutMe extends StatelessWidget {
     return VStack(
       [
         Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             [
               Text(
@@ -208,7 +227,7 @@ class AboutMe extends StatelessWidget {
               20.heightBox,
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.8,
-                height: MediaQuery.of(context).size.height * 0.45,
+                height: MediaQuery.of(context).size.height * 0.40,
                 child: Padding(
                   padding: const EdgeInsets.all(6.0),
                   child: Card(
@@ -221,51 +240,114 @@ class AboutMe extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              'Junior at Vellore Institute of Technology, Vellore',
-                              textScaleFactor: 1.2,
-                              style: TextStyle(
-                                fontSize: 26,
+                          Row(
+
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width*0.05,
                               ),
-                              textAlign: TextAlign.center,
-                            ).shimmer(primaryColor: Colors.red),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              'From Gopalganj,Bihar',
-                              textScaleFactor: 1.2,
-                              style: TextStyle(
-                                fontSize: 26,
+                              FaIcon(FontAwesomeIcons.graduationCap,size: 35,),
+
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width*0.05,
                               ),
-                              textAlign: TextAlign.center,
-                            ).shimmer(primaryColor: Colors.black),
+                              Text(
+                                'Junior at Vellore Institute of Technology, Vellore',
+                                textScaleFactor: 1.2,
+                                style: TextStyle(
+                                  fontSize: 26,
+                                ),
+                                textAlign: TextAlign.center,
+                              ).shimmer(primaryColor: Colors.black),
+                            ],
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              'D.P.S. R.K.Puram, New Delhi',
-                              textScaleFactor: 1.2,
-                              style: TextStyle(
-                                fontSize: 26,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width*0.05,
                               ),
-                              textAlign: TextAlign.center,
-                            ).shimmer(primaryColor: Colors.purple),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              'App Developer,Cybersecurity Researcher \& A Coding Enthusiasts',
-                              textScaleFactor: 1.2,
-                              style: TextStyle(
-                                fontSize: 26,
+                              FaIcon(FontAwesomeIcons.home,size: 35,),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width*0.05,
                               ),
-                              textAlign: TextAlign.center,
-                            ).shimmer(primaryColor: Colors.deepPurple),
+                              Text(
+                                'From Gopalganj,Bihar',
+                                textScaleFactor: 1.2,
+                                style: TextStyle(
+                                  fontSize: 26,
+                                ),
+                                textAlign: TextAlign.center,
+                              ).shimmer(primaryColor: Colors.red),
+                            ],
                           ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width*0.05,
+                              ),
+                              FaIcon(FontAwesomeIcons.school,size: 35,),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width*0.05,
+                              ),
+                              Text(
+                                'D.P.S. R.K. Puram,New Delhi',
+                                textScaleFactor: 1.2,
+                                style: TextStyle(
+                                  fontSize: 26,
+                                ),
+                                textAlign: TextAlign.center,
+                              ).shimmer(primaryColor: Colors.indigo),
+                            ],
+                          ),
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width*0.05,
+                              ),
+                              FaIcon(FontAwesomeIcons.tools,size: 35,),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width*0.05,
+                              ),
+                              Text(
+                                ' App Developer | Cyber Security & Coding Enthusiast',
+                                textScaleFactor: 1.2,
+                                style: TextStyle(
+                                  fontSize: 26,
+                                ),
+                                textAlign: TextAlign.center,
+                              ).shimmer(primaryColor: Colors.teal),
+                            ],
+                          ),
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width*0.05,
+                              ),
+                              FaIcon(FontAwesomeIcons.scaleBalanced,size: 35,),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width*0.05,
+                              ),
+                              Text(
+                                'Always a learner!',
+                                textScaleFactor: 1.2,
+                                style: TextStyle(
+                                  fontSize: 26,
+                                ),
+                                textAlign: TextAlign.center,
+                              ).shimmer(primaryColor: Colors.purple),
+                            ],
+                          ),
+
                         ],
                       ),
                     ),
@@ -286,8 +368,11 @@ class AboutMe extends StatelessWidget {
                           RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(100.0),
                   ))),
-                  onPressed: () {
-                    print("PRESSED");
+                  onPressed: () async {
+                    print("Resume PRESSED");
+
+                    await launchUrl(Uri.parse(
+                        'https://drive.google.com/file/d/1rNcWbAIKiQNuR0utYEvxEymxkYWsF2mN/view?usp=sharing'));
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -580,7 +665,7 @@ class WideMenuCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.7,
-      height: MediaQuery.of(context).size.height * 0.12,
+      height: MediaQuery.of(context).size.height * 0.10,
       child: Padding(
         padding: const EdgeInsets.all(6.0),
         child: Card(
@@ -595,7 +680,6 @@ class WideMenuCard extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               title,
-              textScaleFactor: 1.2,
               style: TextStyle(
                 fontSize: 26,
               ),
@@ -612,26 +696,31 @@ class BigMenuCard extends StatelessWidget {
   BigMenuCard(
       {Key? key,
       required this.title,
+      required this.link,
+      required this.lang,
+      required this.logo,
       required this.col,
       required this.cardcol,
       required this.desc});
 
   Color cardcol;
+  String logo;
+  String link;
   String desc;
   String title;
+  String lang;
   Color col;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.35,
-      height: MediaQuery.of(context).size.height * 0.35,
+      height: MediaQuery.of(context).size.height * 0.50,
       child: Padding(
-        padding: const EdgeInsets.all(6.0),
+        padding: const EdgeInsets.all(10.0),
         child: Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
-          // color: Colors.deepPurple,
-          color: cardcol,
+          color: Colors.transparent,
           shadowColor: Colors.blue,
           elevation: 12,
           borderOnForeground: true,
@@ -642,9 +731,15 @@ class BigMenuCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CircleAvatar(
-                  radius: 30,
-                  child: FlutterLogo(
-                    size: 30,
+                  radius: 40,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      child: Image(
+                        image: AssetImage("assets/projects/$logo.png"),
+                        fit: BoxFit.contain,
+                      ),
+                    ),
                   ),
                 ),
                 Text(
@@ -661,11 +756,64 @@ class BigMenuCard extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ).shimmer(primaryColor: Colors.white),
-              SizedBox(
-                height: MediaQuery.of(context).size.height*0.05,
-              )
+                Container(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      lang,
+                      style: TextStyle(color: Colors.lime, fontSize: 20),
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.orange,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.02,
+                ),
+                Container(
+                  color: Colors.transparent,
+                  height: MediaQuery.of(context).size.height * 0.05,
+                  width: MediaQuery.of(context).size.width * 0.3,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        enableFeedback: true,
+                        shadowColor: Colors.red,
+                        elevation: 10,
+                        primary: Colors.yellow,
+                      ),
+                      onPressed: () async {
+                        await launchUrl(Uri.parse('$link'));
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "VIEW ON GITHUB",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.02,
+                          ),
+                          Icon(
+                            Icons.arrow_forward_ios,
+                            size: 20,
+                            color: Colors.red,
+                          ),
+                        ],
+                      )),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.02,
+                )
               ],
-
             ),
           ),
         ),
@@ -697,16 +845,22 @@ class Projects extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   BigMenuCard(
-                      title: "Editly : PhotoEditor",
+                      lang: "Flutter",
+                      link: "https://github.com/yashrajmani/daily",
+                      title: "Daily : News|Weather|ToDo",
                       desc:
-                          "This is an image editor that uses DsPhotoEditor.sdk (JAVA)",
+                          "Application having daily needs comprising : Headlines, Weather Info, TODOs.",
                       col: Colors.lime,
+                      logo: "logo_daily",
                       cardcol: Colors.pink),
                   BigMenuCard(
-                      title: "Editly : PhotoEditor",
+                      link: "https://github.com/yashrajmani/ImageEditor",
+                      lang: "Java",
+                      logo: "logo_editly",
+                      title: "Editly : ImageEditor",
                       desc:
-                          "This is an image editor that uses DsPhotoEditor.sdk (JAVA)",
-                      col: Colors.lime,
+                          "This is an image editor that uses DsPhotoEditor.sdk.",
+                      col: Colors.amber,
                       cardcol: Colors.pink),
                 ],
               ),
@@ -714,16 +868,23 @@ class Projects extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   BigMenuCard(
-                      title: "Editly : PhotoEditor",
+                      link:
+                          "https://github.com/yashrajmani/TriNetra-Microsoft-Engage-22",
+                      lang: "Flutter",
+                      title: "TriNetra : Emotion Detection App",
+                      logo: "logo_trinetra",
                       desc:
-                          "This is an image editor that uses DsPhotoEditor.sdk (JAVA)",
-                      col: Colors.lime,
+                          "An app that helps in facial emotion recognition - Realtime + Upload",
+                      col: Colors.cyan,
                       cardcol: Colors.pink),
                   BigMenuCard(
-                      title: "Editly : PhotoEditor",
+                      link: "https://github.com/yashrajmani/Scrolly",
+                      lang: "Flutter",
+                      title: "Scrolly : Meme App",
+                      logo: "logo_scrolly",
                       desc:
-                          "This is an image editor that uses DsPhotoEditor.sdk (JAVA)",
-                      col: Colors.lime,
+                          "This is a meme viewing application that has infinite scrolling layout",
+                      col: Colors.orange,
                       cardcol: Colors.pink),
                 ],
               ),
@@ -754,21 +915,47 @@ class ContactMe extends StatelessWidget {
             [
               Text(
                 "Contact Me :",
-                style: TextStyle(fontSize: 20, color: Colors.amber),
+                style: TextStyle(fontSize: 30, color: Colors.amber),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
-              "Email Me at : yashrajmani15946@gmail.com\n"
-                  .text
-                  .white
-                  .xl3
-                  .center
-                  .make()
-                  .shimmer()
-                  .w(context.isMobile
-                      ? context.screenWidth * 0.5
-                      : context.percentWidth * 50),
+              Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  hoverColor: Colors.yellow,
+                  onTap: () async {
+                    await launchUrl(Uri.parse(
+                        'mailto:yashrajmani15946@gmail.com?subject=Contact%20Yash&body=Hey%20Yash'));
+                  },
+                  child: Card(
+                    color: Colors.deepPurple,
+                    elevation: 20,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.mail,
+                            size: 50,
+                          ),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.02,
+                          ),
+                          Text(
+                            "Email Me At : yashrajmani15946@gmail.com",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 30,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),

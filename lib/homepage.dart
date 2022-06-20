@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:yashrajmani/pages/header.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -144,7 +145,9 @@ class _HomePageState extends State<HomePage> {
                               height: MediaQuery.of(context).size.height*0.03,
                             ),
                             ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () async{
+                                await launchUrl(Uri.parse('https://github.com/yashrajmani'));
+                              },
                               child: FaIcon(
                                 FontAwesomeIcons.github,
                               ),
@@ -159,7 +162,10 @@ class _HomePageState extends State<HomePage> {
                               height: MediaQuery.of(context).size.height*0.03,
                             ),
                             ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () async{
+                               await launchUrl(Uri.parse('https://www.linkedin.com/in/yashrajmani/'));
+
+                              },
                               child: FaIcon(
                                 FontAwesomeIcons.linkedin,
                               ),
@@ -174,7 +180,10 @@ class _HomePageState extends State<HomePage> {
                               height: MediaQuery.of(context).size.height*0.03,
                             ),
                             ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () async {
+                                await launchUrl(Uri.parse('https://www.hackerrank.com/yashrajmani15946'));
+
+                              },
                               child: FaIcon(
                                 FontAwesomeIcons.hackerrank,
                               ),
@@ -189,7 +198,9 @@ class _HomePageState extends State<HomePage> {
                               height: MediaQuery.of(context).size.height*0.03,
                             ),
                             ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () async{
+                                await launchUrl(Uri.parse('https://www.instagram.com/yashrajmani_/'));
+                              },
                               child: FaIcon(
                                 FontAwesomeIcons.instagram,
                               ),
