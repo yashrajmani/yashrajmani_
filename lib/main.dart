@@ -22,3 +22,13 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+// TODO: Fix font scale --done
+// TODO: ADD footer - made by yrm  ; done
+// TODO: WORK on design UI
+// TODO: Header bar should work
+// TODO: Come up with a mobile design
+// TODO: Animations
+// TODO: Dark + Light mode switch
+// TODO: Design Images and Logos ,etc

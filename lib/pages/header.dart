@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -14,180 +14,290 @@ class Header extends StatelessWidget {
     return SafeArea(
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.01,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      HelloWorld().shimmer(primaryColor: Colors.pink),
-                      Text(
-                        "Myself,",
-                        style: TextStyle(
-                            fontSize: 40, fontWeight: FontWeight.w300),
-                      ).shimmer(primaryColor: Colors.orange),
-                      Text(
-                        "YASH\nRAJ\nMANI",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 92,
-                          color: Colors.white,
-                        ),
-                      ).shimmer(primaryColor: Colors.white60)
-                    ],
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.15,
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.35,
+        child:
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.05,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(30.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          CircleAvatar(
+                            radius: 100,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Image(
+                                image: AssetImage("assets/dp_yrm.png"),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                          Text(
+                            "Myself,",
+                            style: TextStyle(
+                                fontSize: 40, fontWeight: FontWeight.w300),
+                          ).shimmer(primaryColor: Colors.orange),
+                          Text(
+                            "YASH RAJ MANI",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 40,
+                              color: Colors.white,
+                            ),
+                          ).shimmer(primaryColor: Colors.white),
+                          Text(
+                            "Junior at VIT Vellore",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.orange,
+                            ),
+                          ).shimmer(primaryColor: Colors.yellow)
+                        ],
                       ),
-                      CircleAvatar(
-                        radius: 200,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Image(
-                            image: AssetImage("assets/dp_yrm.png"),
-                            fit: BoxFit.fill,
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.15,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        HelloWorld().shimmer(primaryColor: Colors.pink),
+                        Text(
+                          "I am a",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 80,
+                            color: Colors.white,
+                          ),
+                        ).shimmer(primaryColor: Colors.white60),
+
+
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          height: MediaQuery.of(context).size.height * 0.2,
+                          child: AnimatedTextKit(
+                            animatedTexts: [
+                              TypewriterAnimatedText(
+                                'Flutter Developer',
+                                textStyle: TextStyle(
+                                  fontSize: 50,
+                                  color: Colors.yellow,
+                                ),
+                                speed: const Duration(milliseconds: 80),
+                              ),
+                              TypewriterAnimatedText(
+                                'Coder',
+                                textStyle: TextStyle(
+                                  fontSize: 50,
+                                  color: Colors.yellow,
+                                ),
+                                speed: const Duration(milliseconds: 80),
+                              ),
+                              TypewriterAnimatedText(
+                                'Cyber Security Enthusiast',
+                                textStyle: TextStyle(
+                                  fontSize: 50,
+                                  color: Colors.yellow,
+                                ),
+                                speed: const Duration(milliseconds: 50),
+                              ),
+                              TypewriterAnimatedText(
+                                'Friend',
+                                textStyle: TextStyle(
+                                  fontSize: 50,
+                                  color: Colors.yellow,
+                                ),
+                                speed: const Duration(milliseconds: 80),
+                              ),
+                              TypewriterAnimatedText(
+                                'Teamplayer',
+                                textStyle: TextStyle(
+                                  fontSize: 50,
+                                  color: Colors.yellow,
+                                ),
+                                speed: const Duration(milliseconds: 80),
+                              ),
+                            ],
+                            isRepeatingAnimation: true,
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.01,
-                  ),
-                ],
+                      ],
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.01,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.01,
-            ),
-            VxBox()
-                .color(Colors.black)
-                .size(900, 8)
-                .make()
-                .px2()
-                .shimmer(primaryColor: Colors.yellow),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
-            ),
-            const AboutMe(),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.01,
-            ),
-            VxBox()
-                .color(Colors.black)
-                .size(900, 8)
-                .make()
-                .px2()
-                .shimmer(primaryColor: Colors.yellow),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.01,
-            ),
-            const Skills(),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
-            ),
-            VxBox()
-                .color(Colors.black)
-                .size(900, 8)
-                .make()
-                .px2()
-                .shimmer(primaryColor: Colors.yellow),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
-            ),
-            const Tools(),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
-            ),
-            VxBox()
-                .color(Colors.black)
-                .size(900, 8)
-                .make()
-                .px2()
-                .shimmer(primaryColor: Colors.yellow),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
-            ),
-            const PLanguages(),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
-            ),
-            VxBox()
-                .color(Colors.black)
-                .size(900, 8)
-                .make()
-                .px2()
-                .shimmer(primaryColor: Colors.yellow),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
-            ),
-            const Projects(),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
-            ),
-            VxBox()
-                .color(Colors.black)
-                .size(900, 8)
-                .make()
-                .px2()
-                .shimmer(primaryColor: Colors.yellow),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
-            ),
-            const ContactMe(),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
-            ),
-            VxBox()
-                .color(Colors.black)
-                .size(900, 8)
-                .make()
-                .px2()
-                .shimmer(primaryColor: Colors.yellow),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.flash_on,
-                  color: Colors.yellow,
-                  size: 50,
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.01,
+              ),
+              VxBox()
+                  .color(Colors.black)
+                  .size(1000, 8)
+                  .make()
+                  .px2()
+                  .shimmer(primaryColor: Colors.yellow),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              const AboutMe(),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.01,
+              ),
+              VxBox()
+                  .color(Colors.black)
+                  .size(900, 8)
+                  .make()
+                  .px2()
+                  .shimmer(primaryColor: Colors.yellow),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.01,
+              ),
+              const Skills(),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              VxBox()
+                  .color(Colors.black)
+                  .size(900, 8)
+                  .make()
+                  .px2()
+                  .shimmer(primaryColor: Colors.yellow),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              const Tools(),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              VxBox()
+                  .color(Colors.black)
+                  .size(900, 8)
+                  .make()
+                  .px2()
+                  .shimmer(primaryColor: Colors.yellow),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              const PLanguages(),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              VxBox()
+                  .color(Colors.black)
+                  .size(900, 8)
+                  .make()
+                  .px2()
+                  .shimmer(primaryColor: Colors.yellow),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              const FittedBox(
+                child: Projects(),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              VxBox()
+                  .color(Colors.black)
+                  .size(900, 8)
+                  .make()
+                  .px2()
+                  .shimmer(primaryColor: Colors.yellow),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              const ContactMe(),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              VxBox()
+                  .color(Colors.black)
+                  .size(900, 8)
+                  .make()
+                  .px2()
+                  .shimmer(primaryColor: Colors.yellow),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              FittedBox(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.flash_on,
+                      color: Colors.yellow,
+                      size: 50,
+                    ),
+                    Text(
+                      "HERE TO HUSTLE !",
+                      style: TextStyle(
+                        color: Colors.amber,
+                        fontSize: 50,
+                      ),
+                    ),
+                    Icon(
+                      Icons.flash_on,
+                      color: Colors.yellow,
+                      size: 50,
+                    ),
+                  ],
                 ),
-                Text(
-                  "HERE TO HUSTLE !",
-                  style: TextStyle(
-                    color: Colors.amber,
-                    fontSize: 50,
-                  ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              VxBox()
+                  .color(Colors.black)
+                  .size(900, 8)
+                  .make()
+                  .px2()
+                  .shimmer(primaryColor: Colors.yellow),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              Text(
+                "Copyright © 2022 All rights reserved",
+                style: TextStyle(
+                  color: Colors.white70,
+                  fontSize: 16,
                 ),
-                Icon(
-                  Icons.flash_on,
-                  color: Colors.yellow,
-                  size: 50,
-                ),
-              ],
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
-            ),
-          ],
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+        RichText(
+          text: TextSpan(
+            children: <TextSpan>[
+              TextSpan(
+                text: 'Made with Flutter and ♥ by Yash Raj Mani',
+                style: TextStyle (
+                  color: Colors.white,
+                  fontSize: 20,
+                )// non-emoji characters
+              ),
+            ],
+          ),
         ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+            ],
+          ),
       ),
     );
   }
@@ -239,116 +349,143 @@ class AboutMe extends StatelessWidget {
                     elevation: 12,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width*0.05,
-                              ),
-                              FaIcon(FontAwesomeIcons.graduationCap,size: 35,),
-
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width*0.05,
-                              ),
-                              Text(
-                                'Junior at Vellore Institute of Technology, Vellore',
-                                textScaleFactor: 1.2,
-                                style: TextStyle(
-                                  fontSize: 26,
+                      child: FittedBox(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.05,
                                 ),
-                                textAlign: TextAlign.center,
-                              ).shimmer(primaryColor: Colors.black),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width*0.05,
-                              ),
-                              FaIcon(FontAwesomeIcons.home,size: 35,),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width*0.05,
-                              ),
-                              Text(
-                                'From Gopalganj,Bihar',
-                                textScaleFactor: 1.2,
-                                style: TextStyle(
-                                  fontSize: 26,
+                                FaIcon(
+                                  FontAwesomeIcons.graduationCap,
+                                  size: 26,
                                 ),
-                                textAlign: TextAlign.center,
-                              ).shimmer(primaryColor: Colors.red),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width*0.05,
-                              ),
-                              FaIcon(FontAwesomeIcons.school,size: 35,),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width*0.05,
-                              ),
-                              Text(
-                                'D.P.S. R.K. Puram,New Delhi',
-                                textScaleFactor: 1.2,
-                                style: TextStyle(
-                                  fontSize: 26,
+                                SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.05,
                                 ),
-                                textAlign: TextAlign.center,
-                              ).shimmer(primaryColor: Colors.indigo),
-                            ],
-                          ),
-
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width*0.05,
-                              ),
-                              FaIcon(FontAwesomeIcons.tools,size: 35,),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width*0.05,
-                              ),
-                              Text(
-                                ' App Developer | Cyber Security & Coding Enthusiast',
-                                textScaleFactor: 1.2,
-                                style: TextStyle(
-                                  fontSize: 26,
+                                FittedBox(
+                                  child: Text(
+                                    'Junior at Vellore Institute of Technology, Vellore',
+                                    style: TextStyle(
+                                      fontSize: 26,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ).shimmer(primaryColor: Colors.black),
                                 ),
-                                textAlign: TextAlign.center,
-                              ).shimmer(primaryColor: Colors.teal),
-                            ],
-                          ),
-
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width*0.05,
-                              ),
-                              FaIcon(FontAwesomeIcons.scaleBalanced,size: 35,),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width*0.05,
-                              ),
-                              Text(
-                                'Always a learner!',
-                                textScaleFactor: 1.2,
-                                style: TextStyle(
-                                  fontSize: 26,
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.05,
                                 ),
-                                textAlign: TextAlign.center,
-                              ).shimmer(primaryColor: Colors.purple),
-                            ],
-                          ),
-
-                        ],
+                                FaIcon(
+                                  FontAwesomeIcons.home,
+                                  size: 26,
+                                ),
+                                SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.05,
+                                ),
+                                FittedBox(
+                                  child: Text(
+                                    'From Gopalganj,Bihar',
+                                    style: TextStyle(
+                                      fontSize: 26,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ).shimmer(primaryColor: Colors.red),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.05,
+                                ),
+                                FaIcon(
+                                  FontAwesomeIcons.school,
+                                  size: 26,
+                                ),
+                                SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.05,
+                                ),
+                                FittedBox(
+                                  child: Text(
+                                    'D.P.S. R.K. Puram,New Delhi',
+                                    style: TextStyle(
+                                      fontSize: 26,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ).shimmer(primaryColor: Colors.indigo),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.05,
+                                ),
+                                FaIcon(
+                                  FontAwesomeIcons.tools,
+                                  size: 26,
+                                ),
+                                SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.05,
+                                ),
+                                FittedBox(
+                                  child: Text(
+                                    ' App Developer | Cyber Security & Coding Enthusiast',
+                                    style: TextStyle(
+                                      fontSize: 26,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ).shimmer(primaryColor: Colors.teal),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.05,
+                                ),
+                                FaIcon(
+                                  FontAwesomeIcons.scaleBalanced,
+                                  size: 26,
+                                ),
+                                SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.05,
+                                ),
+                                FittedBox(
+                                  child: Text(
+                                    'Always a learner!',
+                                    style: TextStyle(
+                                      fontSize: 26,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ).shimmer(primaryColor: Colors.purple),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -635,14 +772,15 @@ class MenuCard extends StatelessWidget {
           borderOnForeground: true,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(
-              title,
-              textScaleFactor: 1.2,
-              style: TextStyle(
-                fontSize: 26,
-              ),
-              textAlign: TextAlign.center,
-            ).shimmer(primaryColor: col),
+            child: FittedBox(
+              child: Text(
+                title,
+                style: TextStyle(
+                  fontSize: 26,
+                ),
+                textAlign: TextAlign.center,
+              ).shimmer(primaryColor: col),
+            ),
           ),
         ),
       ),
@@ -678,13 +816,15 @@ class WideMenuCard extends StatelessWidget {
           borderOnForeground: true,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(
-              title,
-              style: TextStyle(
-                fontSize: 26,
-              ),
-              textAlign: TextAlign.center,
-            ).shimmer(primaryColor: col),
+            child: FittedBox(
+              child: Text(
+                title,
+                style: TextStyle(
+                  fontSize: 30,
+                ),
+                textAlign: TextAlign.center,
+              ).shimmer(primaryColor: col),
+            ),
           ),
         ),
       ),
@@ -714,7 +854,7 @@ class BigMenuCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.35,
-      height: MediaQuery.of(context).size.height * 0.50,
+      height: MediaQuery.of(context).size.height * 0.35,
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Card(
@@ -726,94 +866,102 @@ class BigMenuCard extends StatelessWidget {
           borderOnForeground: true,
           child: Padding(
             padding: const EdgeInsets.all(2.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                  radius: 40,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
+            child: FittedBox(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CircleAvatar(
+                    radius: 40,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Image(
                         image: AssetImage("assets/projects/$logo.png"),
                         fit: BoxFit.contain,
                       ),
                     ),
                   ),
-                ),
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: 26,
-                  ),
-                  textAlign: TextAlign.center,
-                ).shimmer(primaryColor: col),
-                Text(
-                  desc,
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
-                  textAlign: TextAlign.center,
-                ).shimmer(primaryColor: Colors.white),
-                Container(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      lang,
-                      style: TextStyle(color: Colors.lime, fontSize: 20),
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: 26,
                     ),
-                  ),
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.orange,
-                      width: 2.0,
+                    textAlign: TextAlign.center,
+                  ).shimmer(primaryColor: col),
+                  Text(
+                    desc,
+                    style: TextStyle(
+                      fontSize: 20,
+                      overflow: TextOverflow.visible,
                     ),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.02,
-                ),
-                Container(
-                  color: Colors.transparent,
-                  height: MediaQuery.of(context).size.height * 0.05,
-                  width: MediaQuery.of(context).size.width * 0.3,
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        enableFeedback: true,
-                        shadowColor: Colors.red,
-                        elevation: 10,
-                        primary: Colors.yellow,
+                    maxLines: 3,
+                    textAlign: TextAlign.center,
+                  ).shimmer(primaryColor: Colors.white),
+                  FittedBox(
+                    child: Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: FittedBox(
+                          child: Text(
+                            lang,
+                            style: TextStyle(color: Colors.lime, fontSize: 20),
+                          ),
+                        ),
                       ),
-                      onPressed: () async {
-                        await launchUrl(Uri.parse('$link'));
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "VIEW ON GITHUB",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.orange,
+                          width: 2.0,
+                        ),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.02,
+                  ),
+                  FittedBox(
+                    child: Container(
+                      color: Colors.transparent,
+                      height: MediaQuery.of(context).size.height * 0.05,
+                      width: MediaQuery.of(context).size.width * 0.3,
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            enableFeedback: true,
+                            shadowColor: Colors.red,
+                            elevation: 10,
+                            primary: Colors.yellow,
+                          ),
+                          onPressed: () async {
+                            await launchUrl(Uri.parse('$link'));
+                          },
+                          child: FittedBox(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "VIEW ON GITHUB",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.02,
+                                ),
+                                Icon(
+                                  Icons.arrow_forward_ios,
+                                  size: 20,
+                                  color: Colors.red,
+                                ),
+                              ],
                             ),
-                          ),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.02,
-                          ),
-                          Icon(
-                            Icons.arrow_forward_ios,
-                            size: 20,
-                            color: Colors.red,
-                          ),
-                        ],
-                      )),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.02,
-                )
-              ],
+                          )),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
