@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
 
       theme: ThemeData(
         fontFamily: "Nunito",
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
 
 // TODO: Fix font scale --done
 // TODO: ADD footer - made by yrm  ; done
+// TODO: Add app name and logo - done
 // TODO: WORK on design UI
 // TODO: Header bar should work
 // TODO: Come up with a mobile design
