@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'homepage.dart';
+import 'pages/homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,8 +27,8 @@ class MyApp extends StatelessWidget {
 // TODO: Fix font scale --done
 // TODO: ADD footer - made by yrm  ; done
 // TODO: Add app name and logo - done
-// TODO: WORK on design UI
-// TODO: Header bar should work
+// TODO: WORK on design UI : done
+// TODO: SIDE bar should work :
 // TODO: Come up with a mobile design
 // TODO: Animations
 // TODO: Dark + Light mode switch

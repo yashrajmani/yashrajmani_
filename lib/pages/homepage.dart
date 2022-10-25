@@ -4,6 +4,11 @@ import 'package:velocity_x/velocity_x.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:yashrajmani/pages/header.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:yashrajmani/content/aboutme.dart';
+import 'package:yashrajmani/content/skills.dart';
+import 'package:yashrajmani/content/planguages.dart';
+import 'package:yashrajmani/content/tools.dart';
+import 'package:yashrajmani/content/projects.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -19,6 +24,8 @@ class _HomePageState extends State<HomePage> {
       color: Colors.black,
       child: Stack(
         children: [
+
+          //BG IAMGE
           Container(
             width: double.infinity,
             height: double.infinity,
@@ -29,19 +36,16 @@ class _HomePageState extends State<HomePage> {
           ),
           Column(
             children: [
-              //TOPBAR
-              // TopBar(),
 
-              //SPACE
-
-              // SIZE BAR + Header
+              // SIZE BARS + CONTENT-Header
               Expanded(
                 flex: 25,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    //right
+
+                    //LEFT SIDE BAR
                     Expanded(
                       flex: 1,
                       child: Padding(
@@ -67,7 +71,10 @@ class _HomePageState extends State<HomePage> {
                                         0.3,
                                   ),
                                   ElevatedButton(
-                                    onPressed: () async {},
+                                    onPressed: () async {
+                                      print("ABOUT ME CALLED");
+                                      AboutMe();
+                                    },
                                     child: FittedBox(
                                       child: FaIcon(
                                         FontAwesomeIcons.contactCard,
@@ -124,7 +131,9 @@ class _HomePageState extends State<HomePage> {
                                         0.3,
                                   ),
                                   ElevatedButton(
-                                    onPressed: () async {},
+                                    onPressed: () async {
+
+                                    },
                                     child: FittedBox(
                                       child: FaIcon(
                                         FontAwesomeIcons.code,
@@ -169,29 +178,26 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
 
-                    //CONTENt
+                    //CONTENT
                     Expanded(
                       flex: 16,
                       child: Stack(
                         children: [
                           SingleChildScrollView(
                             child: FittedBox(
-                              child: Container(
-                                child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Header(),
-                                    ]),
-                              ),
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: const [
+                                    Header(),
+                                  ]),
                             ),
                           ),
                         ],
                       ),
                     ),
 
-                    //left
+                    //RIGHT SIDE BAR
                     Expanded(
                       flex: 1,
                       child: Padding(
@@ -343,124 +349,3 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class TopBar extends StatelessWidget {
-  const TopBar({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      flex: 2,
-      child: Container(
-        color: Colors.deepPurple,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Container(
-              width: MediaQuery.of(context).size.width * 0.15,
-              height: MediaQuery.of(context).size.height * 0.1,
-              child: FlatButton(
-                child: FittedBox(
-                  child: Text(
-                    "About",
-                    style: TextStyle(
-                      color: Colors.yellow,
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
-                onPressed: () {},
-              ),
-            ),
-            VerticalDivider(
-              thickness: 2,
-              endIndent: 8,
-              indent: 8,
-              color: Colors.white54,
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.15,
-              height: MediaQuery.of(context).size.height * 0.1,
-              child: FlatButton(
-                child: FittedBox(
-                  child: Text(
-                    "Skills",
-                    style: TextStyle(color: Colors.yellow, fontSize: 18),
-                  ),
-                ),
-                onPressed: () {},
-              ),
-            ),
-            VerticalDivider(
-              thickness: 2,
-              endIndent: 8,
-              indent: 8,
-              color: Colors.white54,
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.15,
-              height: MediaQuery.of(context).size.height * 0.1,
-              child: FlatButton(
-                child: FittedBox(
-                  child: Text(
-                    "Tools",
-                    style: TextStyle(
-                      color: Colors.yellow,
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
-                onPressed: () {},
-              ),
-            ),
-            VerticalDivider(
-              thickness: 2,
-              endIndent: 8,
-              indent: 8,
-              color: Colors.white54,
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.15,
-              height: MediaQuery.of(context).size.height * 0.1,
-              child: FlatButton(
-                child: FittedBox(
-                  child: Text(
-                    "Projects",
-                    style: TextStyle(
-                      color: Colors.yellow,
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
-                onPressed: () {},
-              ),
-            ),
-            VerticalDivider(
-              thickness: 2,
-              endIndent: 8,
-              indent: 8,
-              color: Colors.white54,
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.15,
-              height: MediaQuery.of(context).size.height * 0.1,
-              child: FlatButton(
-                child: FittedBox(
-                  child: Text(
-                    "Contact",
-                    style: TextStyle(
-                      color: Colors.yellow,
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
-                onPressed: () {},
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
