@@ -1,5 +1,5 @@
 
-# LIVE AT : https://yashrajmani.github.io/#/
+# LIVE AT : http://www.yashrajmani.co/#/
 ## This is my portfolio website in Flutter
 
 
