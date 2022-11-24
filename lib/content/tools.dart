@@ -40,10 +40,14 @@ class Tools extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.02,
                       ),
-                      Text(
-                        "TOOLS",
-                        style: TextStyle(fontSize: 60, color: Colors.amber),
-                      ),
+                      const Text(
+                        "Tools",
+                        style: TextStyle(
+                          fontFamily: 'Sweet',
+                            fontWeight: FontWeight.w500,
+
+                            fontSize: 40, color: Colors.amber),
+                      ).shimmer(primaryColor: Colors.yellow),
 
                     ],
                   ),

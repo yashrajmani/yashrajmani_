@@ -20,12 +20,18 @@ class ContactMe extends StatelessWidget {
         Column(
           children: [
             [
-              Text(
-                "Contact",
-                style: TextStyle(fontSize: 30, color: Colors.amber),
-              ),
+
+              const Text(
+                "Contact Me",
+                style: TextStyle(
+                    fontFamily: 'Sweet',
+                    fontWeight: FontWeight.w500,
+
+                    fontSize: 50, color: Colors.amber),
+              ).shimmer(primaryColor: Colors.yellow),
+
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
+                height: MediaQuery.of(context).size.height * 0.07,
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -43,12 +49,12 @@ class ContactMe extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.04,
+                    width: MediaQuery.of(context).size.width * 0.07,
                   ),
                   Contact(
                     t1: "Phone",
                     t2: "+91-7564954597",
-                    link: "tel:+917564954597}",
+                    link: "tel:+917564954597",
                     cicon: Icon(
                       Icons.phone,
                       color: Colors.white,
@@ -85,7 +91,7 @@ class ContactMe extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
+                height: MediaQuery.of(context).size.height * 0.07,
               ),
             ].vStack(),
           ],

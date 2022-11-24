@@ -9,6 +9,7 @@ import 'package:yashrajmani/content/skills.dart';
 import 'package:yashrajmani/content/planguages.dart';
 import 'package:yashrajmani/content/tools.dart';
 import 'package:yashrajmani/content/projects.dart';
+import 'package:marquee/marquee.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -44,139 +45,152 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-
-                    //LEFT SIDE BAR
                     Expanded(
-                      flex: 1,
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Container(
-                          width: MediaQuery.of(context).size.width * 10,
-                          height: MediaQuery.of(context).size.height * 100,
-                        // TODO: ADD LINK BASED SCROLL
-                          decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(100)),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(3.0),
-                            child: FittedBox(
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  SizedBox(
-                                    height: MediaQuery.of(context).size.height *
-                                        0.3,
-                                  ),
-                                  ElevatedButton(
-                                    onPressed: () async {
-                                      print("ABOUT ME CALLED");
-                                      AboutMe();
-                                    },
-                                    child: FittedBox(
-                                      child: FaIcon(
-                                        FontAwesomeIcons.contactCard,
-                                        size: 80,
-                                      ),
-                                    ),
-                                    style: ElevatedButton.styleFrom(
-                                      shape: CircleBorder(),
-                                      primary: Colors.deepPurple,
-                                      minimumSize: const Size(200, 200),
-                                      maximumSize: const Size(200, 200),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: MediaQuery.of(context).size.height *
-                                        0.3,
-                                  ),
-                                  ElevatedButton(
-                                    onPressed: () async {},
-                                    child: FittedBox(
-                                      child: FaIcon(
-                                        FontAwesomeIcons.toolbox,
-                                        size: 80,
-                                      ),
-                                    ),
-                                    style: ElevatedButton.styleFrom(
-                                      shape: CircleBorder(),
-                                      primary: Colors.blue[900],
-                                      minimumSize: const Size(200, 200),
-                                      maximumSize: const Size(200, 200),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: MediaQuery.of(context).size.height *
-                                        0.3,
-                                  ),
-                                  ElevatedButton(
-                                    onPressed: () async {},
-                                    child: FittedBox(
-                                      child: FaIcon(
-                                        FontAwesomeIcons.tools,
-                                        size: 80,
-                                      ),
-                                    ),
-                                    style: ElevatedButton.styleFrom(
-                                      shape: CircleBorder(),
-                                      primary: Colors.green,
-                                      minimumSize: const Size(200, 200),
-                                      maximumSize: const Size(200, 200),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: MediaQuery.of(context).size.height *
-                                        0.3,
-                                  ),
-                                  ElevatedButton(
-                                    onPressed: () async {
-
-                                    },
-                                    child: FittedBox(
-                                      child: FaIcon(
-                                        FontAwesomeIcons.code,
-                                        size: 80,
-                                      ),
-                                    ),
-                                    style: ElevatedButton.styleFrom(
-                                      shape: CircleBorder(),
-                                      primary: Colors.red,
-                                      minimumSize: const Size(200, 200),
-                                      maximumSize: const Size(200, 200),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: MediaQuery.of(context).size.height *
-                                        0.3,
-                                  ),
-                                  ElevatedButton(
-                                    onPressed: () async {},
-                                    child: FittedBox(
-                                      child: FaIcon(
-                                        FontAwesomeIcons.solidContactBook,
-                                        size: 80,
-                                      ),
-                                    ),
-                                    style: ElevatedButton.styleFrom(
-                                      shape: CircleBorder(),
-                                      primary: Colors.pinkAccent,
-                                      minimumSize: const Size(200, 200),
-                                      maximumSize: const Size(200, 200),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: MediaQuery.of(context).size.height *
-                                        0.3,
-                                  ),
-                                ],
-                              ),
-                            ),
+                      flex:1,
+                      child: RotatedBox(
+                        quarterTurns: 1,
+                        child: Marquee(
+                          text: '  🤖  👨  💻  🤍  🦾  🚀  📲  🖥  💻  ⌨  🖱  🖲  📽  📡  🛠  📸  🤖  👨  💻  🤍  🦾  🚀  📲  🖥  💻  ⌨  🖱  🖲  📽  📡  🛠  📸 ',
+                          style: TextStyle(
+                            color: Colors.yellow,
+                            fontSize: 40,
                           ),
                         ),
-                      ),
                     ),
+                    ),
+
+                    // //LEFT SIDE BAR
+                    // Expanded(
+                    //   flex: 1,
+                    //   child: Padding(
+                    //     padding: const EdgeInsets.all(4.0),
+                    //     child: Container(
+                    //       width: MediaQuery.of(context).size.width * 10,
+                    //       height: MediaQuery.of(context).size.height * 100,
+                    //     // TODO: ADD LINK BASED SCROLL
+                    //       decoration: BoxDecoration(
+                    //         color: Colors.transparent,
+                    //         borderRadius:
+                    //             BorderRadius.all(Radius.circular(100)),
+                    //       ),
+                    //       child: Padding(
+                    //         padding: const EdgeInsets.all(3.0),
+                    //         child: FittedBox(
+                    //           child: Column(
+                    //             mainAxisAlignment:
+                    //                 MainAxisAlignment.spaceBetween,
+                    //             children: [
+                    //               SizedBox(
+                    //                 height: MediaQuery.of(context).size.height *
+                    //                     0.3,
+                    //               ),
+                    //               ElevatedButton(
+                    //                 onPressed: () async {
+                    //                   print("ABOUT ME CALLED");
+                    //                   AboutMe();
+                    //                 },
+                    //                 child: FittedBox(
+                    //                   child: FaIcon(
+                    //                     FontAwesomeIcons.contactCard,
+                    //                     size: 80,
+                    //                   ),
+                    //                 ),
+                    //                 style: ElevatedButton.styleFrom(
+                    //                   shape: CircleBorder(),
+                    //                   primary: Colors.deepPurple,
+                    //                   minimumSize: const Size(200, 200),
+                    //                   maximumSize: const Size(200, 200),
+                    //                 ),
+                    //               ),
+                    //               SizedBox(
+                    //                 height: MediaQuery.of(context).size.height *
+                    //                     0.3,
+                    //               ),
+                    //               ElevatedButton(
+                    //                 onPressed: () async {},
+                    //                 child: FittedBox(
+                    //                   child: FaIcon(
+                    //                     FontAwesomeIcons.toolbox,
+                    //                     size: 80,
+                    //                   ),
+                    //                 ),
+                    //                 style: ElevatedButton.styleFrom(
+                    //                   shape: CircleBorder(),
+                    //                   primary: Colors.blue[900],
+                    //                   minimumSize: const Size(200, 200),
+                    //                   maximumSize: const Size(200, 200),
+                    //                 ),
+                    //               ),
+                    //               SizedBox(
+                    //                 height: MediaQuery.of(context).size.height *
+                    //                     0.3,
+                    //               ),
+                    //               ElevatedButton(
+                    //                 onPressed: () async {},
+                    //                 child: FittedBox(
+                    //                   child: FaIcon(
+                    //                     FontAwesomeIcons.tools,
+                    //                     size: 80,
+                    //                   ),
+                    //                 ),
+                    //                 style: ElevatedButton.styleFrom(
+                    //                   shape: CircleBorder(),
+                    //                   primary: Colors.green,
+                    //                   minimumSize: const Size(200, 200),
+                    //                   maximumSize: const Size(200, 200),
+                    //                 ),
+                    //               ),
+                    //               SizedBox(
+                    //                 height: MediaQuery.of(context).size.height *
+                    //                     0.3,
+                    //               ),
+                    //               ElevatedButton(
+                    //                 onPressed: () async {
+                    //
+                    //                 },
+                    //                 child: FittedBox(
+                    //                   child: FaIcon(
+                    //                     FontAwesomeIcons.code,
+                    //                     size: 80,
+                    //                   ),
+                    //                 ),
+                    //                 style: ElevatedButton.styleFrom(
+                    //                   shape: CircleBorder(),
+                    //                   primary: Colors.red,
+                    //                   minimumSize: const Size(200, 200),
+                    //                   maximumSize: const Size(200, 200),
+                    //                 ),
+                    //               ),
+                    //               SizedBox(
+                    //                 height: MediaQuery.of(context).size.height *
+                    //                     0.3,
+                    //               ),
+                    //               ElevatedButton(
+                    //                 onPressed: () async {},
+                    //                 child: FittedBox(
+                    //                   child: FaIcon(
+                    //                     FontAwesomeIcons.solidContactBook,
+                    //                     size: 80,
+                    //                   ),
+                    //                 ),
+                    //                 style: ElevatedButton.styleFrom(
+                    //                   shape: CircleBorder(),
+                    //                   primary: Colors.pinkAccent,
+                    //                   minimumSize: const Size(200, 200),
+                    //                   maximumSize: const Size(200, 200),
+                    //                 ),
+                    //               ),
+                    //               SizedBox(
+                    //                 height: MediaQuery.of(context).size.height *
+                    //                     0.3,
+                    //               ),
+                    //             ],
+                    //           ),
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
 
                     //CONTENT
                     Expanded(

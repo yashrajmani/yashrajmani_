@@ -101,10 +101,16 @@ class PLanguages extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.02,
                       ),
-                      Text(
-                        "Programming Languages",
-                        style: TextStyle(fontSize: 30, color: Colors.amber),
-                      ),
+
+                      const Text(
+                        "Programming\n  Languages",
+                        style: TextStyle(
+                            fontFamily: 'Sweet',
+                            fontWeight: FontWeight.w500,
+
+                            fontSize: 40, color: Colors.amber),
+                      ).shimmer(primaryColor: Colors.yellow),
+
 
                     ],
                   ),

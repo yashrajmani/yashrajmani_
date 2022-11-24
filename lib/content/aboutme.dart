@@ -17,10 +17,15 @@ class AboutMe extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
-            "ABOUT ME :",
-            style: TextStyle(fontSize: 30, color: Colors.amber),
-          ),
+          const Text(
+            "About Me",
+            style: TextStyle(
+                fontFamily: 'Sweet',
+                fontWeight: FontWeight.w500,
+
+                fontSize: 50, color: Colors.amber),
+          ).shimmer(primaryColor: Colors.yellow),
+
           10.heightBox,
           Card(
             shape: const RoundedRectangleBorder(

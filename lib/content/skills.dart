@@ -21,10 +21,15 @@ class Skills extends StatelessWidget {
         Column(
           children: [
             [
-              Text(
-                "My Skills :",
-                style: TextStyle(fontSize: 30, color: Colors.amber),
-              ),
+              const Text(
+                "My Skills",
+                style: TextStyle(
+                    fontFamily: 'Sweet',
+                    fontWeight: FontWeight.w500,
+
+                    fontSize: 50, color: Colors.amber),
+              ).shimmer(primaryColor: Colors.yellow),
+
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),

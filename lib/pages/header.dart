@@ -53,10 +53,14 @@ class Header extends StatelessWidget {
                             ),
                           ),
                         ),
+                        SizedBox(
+                          height:MediaQuery.of(context).size.height*0.05,
+                        ),
                         Text(
                           "Myself,",
                           style: TextStyle(
-                              fontSize: 40, fontWeight: FontWeight.w300),
+                              fontFamily: 'Sweet',
+                              fontSize: 40, fontWeight: FontWeight.w800),
                         ).shimmer(primaryColor: Colors.orange),
                         Text(
                           "YASH RAJ MANI",
@@ -98,7 +102,8 @@ class Header extends StatelessWidget {
                       Text(
                         "Hello World!",
                         style: TextStyle(
-                            fontSize: 60, fontWeight: FontWeight.bold),
+                            fontFamily: 'Sweet',
+                            fontSize: 60, fontWeight: FontWeight.w500),
                       ).shimmer(primaryColor: Colors.pink),
                       Text(
                         "I am a",
@@ -269,15 +274,27 @@ class Header extends StatelessWidget {
                 .px2()
                 .shimmer(primaryColor: Colors.yellow),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
+              height: MediaQuery.of(context).size.height * 0.03,
             ),
 
             //----------------- FOOTER -----------------------------
+            SizedBox(
+              width: MediaQuery.of(context).size.width*0.40,
+              height: MediaQuery.of(context).size.height*0.40,
+              child: const Image(
+                image: AssetImage('assets/avatars/hi.png'),
+              ),
+            ),
+
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.03,
+            ),
             FittedBox(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+
                   Icon(
                     Icons.flash_on,
                     color: Colors.yellow,
@@ -286,10 +303,11 @@ class Header extends StatelessWidget {
                   Text(
                     "HERE TO HUSTLE !",
                     style: TextStyle(
+                      fontFamily: 'Sweet',
                       color: Colors.amber,
                       fontSize: 50,
                     ),
-                  ),
+                  ).shimmer(primaryColor: Colors.amber),
                   Icon(
                     Icons.flash_on,
                     color: Colors.yellow,
@@ -298,11 +316,9 @@ class Header extends StatelessWidget {
                 ],
               ),
             ),
+
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
+              height: MediaQuery.of(context).size.height * 0.07,
             ),
             Text(
               "Copyright © 2022 All rights reserved",
@@ -319,8 +335,9 @@ class Header extends StatelessWidget {
                 children: <TextSpan>[
                   TextSpan(
                       text: 'Made with Flutter and ♥ by Yash Raj Mani',
-                      style: TextStyle(
+                      style: TextStyle( fontFamily: 'Nunito',
                         color: Colors.white,
+                        fontWeight: FontWeight.w300,
                         fontSize: 20,
                       ) // non-emoji characters
                       ),

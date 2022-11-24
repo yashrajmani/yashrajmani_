@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
 
   velocity_x: ^3.5.1
+  marquee: ^2.2.3
 
 dev_dependencies:
   flutter_test:
@@ -95,6 +96,14 @@ flutter:
     - family: Nunito
       fonts:
         - asset: assets/Nunito-Medium.ttf
+
+    - family: Sweet
+      fonts:
+        - asset: assets/Sweet.otf
+
+
+
+
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
